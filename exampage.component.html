@@ -1,0 +1,57 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<nav id= "main_nav" class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#"><img src="assets/images/hog2.png"></a>
+    </div>
+    <div>
+      <webcam [height]="0" [width]="0" [trigger]="triggerObservable" (imageCapture)="handleImage($event)" *ngIf="showWebcam"
+              (initError)="handleInitError($event)"></webcam>
+      <br/>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">Profile</a></li>
+      <li><a href="#">Exam List</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Log out</a></li>
+    </ul>
+    
+  </div>
+
+</nav>
+
+<form>
+
+  <fieldset>
+    <legend>Which of the following is a real spell</legend>
+    <input type="radio" id="radio1" name="radios" checked>
+    <label for="radio1">Hocis Pocis</label><br>
+    <input type="radio" id="radio2" name="radios">
+    <label for="radio2">Ablakazam</label><br>
+    <input type="radio" id="radio3" name="radios">
+    <label for="radio3">Lumos</label>
+  </fieldset>
+
+  <fieldset>
+    <legend>What is the name of a person without magic</legend>
+    <input type="radio" id="radio4" name="radios1" checked>
+    <label for="radio1">Moggel</label><br>
+    <input type="radio" id="radio5" name="radios1">
+    <label for="radio2">Mogel</label><br>
+    <input type="radio" id="radio6" name="radios1">
+    <label for="radio3">Muggle</label>
+  </fieldset>
+  <fieldset>
+    <legend>Which bird rises from the ashes</legend>
+    <input type="radio" id="radio7" name="radios2" checked>
+    <label for="radio7">Pegasus</label><br>
+    <input type="radio" id="radio8" name="radios2">
+    <label for="radio8">Pheonix</label><br>
+    <input type="radio" id="radio9" name="radios2">
+    <label for="radio9">Dragon Dove</label>
+  </fieldset>
+
+  <button (click)="completeExam()">Submit Answers</button>
+</form>
